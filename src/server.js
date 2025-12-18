@@ -8,6 +8,7 @@ import 'dotenv/config';
 import { connectMongoDB } from './db/connectMongoDB.js';
 import authRouter from './routes/authRoutes.js';
 import notesRouter from './routes/notesRoutes.js';
+import userRouter from './routes/userRoutes.js';
 import { notFoundHandler } from './middleware/notFoundHandler.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
@@ -37,6 +38,7 @@ app.use(
 
 app.use(authRouter);
 app.use(notesRouter);
+app.use(userRouter);
 
 app.use(notFoundHandler);
 app.use(celebrateErrors());
